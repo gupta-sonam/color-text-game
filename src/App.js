@@ -1,24 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import { Box, Text } from '@chakra-ui/react'
+import GameContainer from './components/GameContainer';
+import Sidebar from './components/Sidebar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Box width="100vw" height="100vh" background="gray.200" p="8" display={"flex"}
+
+        justifyContent="space-around">
+        <GameContainer />
+        <Sidebar />
+
+      </Box>
+    </>
   );
 }
 
