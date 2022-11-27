@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import { Box, Text } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import GameContainer from './components/GameContainer';
 import Sidebar from './components/Sidebar';
 

@@ -5,30 +5,32 @@ import React ,{useRef,useEffect, useState} from 'react'
 function QuationScreen({ getanswerType, settotalScore, totalScore, setTimeUp }) {
     const [nextQuestion, setNextQuestion] = useState(1);
     const progressBarRef = useRef();
-    function move() {
-        let i = 0;
-        if (i === 0) {
-            i = 1;
-            var elem = progressBarRef.current;
-            var width = 1;
-            var id = setInterval(frame, 100);
-            function frame() {
-                if (width >= 100) {
-                    clearInterval(id);
-                    i = 0;
-                    setTimeUp(true)
-                } else {
-                    setTimeUp(false)
-                    width++;
-                    elem.style.width = width + "%";
+    
+
+    useEffect(() => {
+        function move() {
+            let i = 0;
+            if (i === 0) {
+                i = 1;
+                var elem = progressBarRef.current;
+                var width = 1;
+                var id = setInterval(frame, 100);
+                function frame() {
+                    if (width >= 100) {
+                        clearInterval(id);
+                        i = 0;
+                        setTimeUp(true)
+                    } else {
+                        setTimeUp(false)
+                        width++;
+                        elem.style.width = width + "%";
+                    }
                 }
             }
         }
-    }
-
-    useEffect(() => {
         move();
-    }, [nextQuestion])
+        // eslint-disable-next-line no-console
+    }, [nextQuestion, setTimeUp])
 
 
     let colors = [
