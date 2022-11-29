@@ -3,6 +3,7 @@ import { Box } from '@chakra-ui/react'
 import GameContainer from './components/GameContainer';
 import Sidebar from './components/Sidebar';
 
+
 function App() {
   return (
     <>
