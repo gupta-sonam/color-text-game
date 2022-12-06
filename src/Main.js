@@ -1,25 +1,28 @@
 import React from 'react';
 import {auth} from './Firebase';
+import { Box ,Button,Text } from '@chakra-ui/react'
 
 const Mainpage = () => {
 
 	// Signout function
+	console.log(auth.currentUser.displayName);
 	const logout = () => {
 		auth.signOut();
 	}
 	
 	return (
-		<div>
-			Welcome
+		<Box p="8">
+			<Text as="p">
+
+			Welcome <Text as="span">{auth.currentUser.displayName}</Text>
+			</Text>
 			 
-			{
-				auth.currentUser.email
-			}
-			<button style={{"marginLeft" : "20px"}}
-			onClick={logout}>
+	
+			<Button 
+			onClick={logout} mt="2">
 				Logout
-			</button>
-		</div>
+			</Button>
+		</Box>
 	);
 }
 
